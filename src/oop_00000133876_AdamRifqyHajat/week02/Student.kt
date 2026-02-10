@@ -1,6 +1,11 @@
 package oop_00000133876_AdamRifqyHajat.week02
 
-class Student (val name: String, val nim: String, var major: String) {
+class Student (
+    val name: String,
+    val nim: String,
+    var gpa: Double = 0.0, // <-- Default Argument
+    var major: String
+) {
     init {
         // Validasi Sederhana: Cek panjang NIM
         if (nim.length != 5) {
