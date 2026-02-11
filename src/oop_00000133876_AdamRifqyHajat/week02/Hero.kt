@@ -1,9 +1,9 @@
-package oop_00000133876_AdamRifqyHajat.week02.oop_00000133876_AdamRifqyHajat.week02
+package oop_00000133876_AdamRifqyHajat.week02
 
 class Hero (
     val name : String,
-    var hp : Int = 100,
-    val baseDamage : Int
+    val baseDamage : Int,
+    var hp : Int = 100
 ) {
     fun attack(targetName: String) {
         print("$name menebas $targetName!")
@@ -16,7 +16,7 @@ class Hero (
         }
     }
     fun isAlive() : Boolean{
-        if (hp < 0){
+        if (hp <= 0){
             return false
         } else {
             return true

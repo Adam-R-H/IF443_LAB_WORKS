@@ -1,4 +1,4 @@
-package oop_00000133876_AdamRifqyHajat.week02.oop_00000133876_AdamRifqyHajat.week02
+package oop_00000133876_AdamRifqyHajat.week02
 
 class Loan (
     val bookTitle: String,
