@@ -42,8 +42,8 @@ fun main(){
     } else if (type == 2) {
         // Memanggil Secondary Constructor, jurusan otomatis "Non-Matriculated"
         val s2 = Student(name, nim)
-            println("Terdaftar di ${s2.major} dengan GPA awal ${s2.gpa}")
-        } else {
-            println("Pilihan ngawur, pendaftaran batal!")
+        println("Terdaftar di ${s2.major} dengan GPA awal ${s2.gpa}")
+    } else {
+        println("Pilihan ngawur, pendaftaran batal!")
     }
 }
