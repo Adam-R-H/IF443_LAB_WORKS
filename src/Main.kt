@@ -1,49 +1,31 @@
 package oop_00000133876_AdamRifqyHajat.week02
 
+import oop_00000133876_AdamRifqyHajat.week02.oop_00000133876_AdamRifqyHajat.week02.Loan
 import java.util.Scanner
 
 fun main(){
     val scanner = Scanner(System. `in`)
 
-    println("--- APLIKASI PMB UMN ---")
+    println("--- APLIKASI PEMINJAMAN ---")
+
+    print("Masukkan Judul: ")
+    val judul = scanner.nextLine()
 
     print("Masukkan Nama: ")
-    val name = scanner.nextLine()
+    val peminjam = scanner.next()
 
-    print("Masukkan NIM (Wajib 5 Karakter): ")
-    val nim = scanner.next()
+    print("Masukkan Lama Pinjam: ")
+    var lama = scanner.nextInt()
 
     scanner.nextLine() // Bersihkan buffer newline (Penyakit klasik Scanner!)
 
     // Validasi di sisi pemanggil (Main)
-    if (nim.length != 5) {
-        println("ERROR: Pendaftaran dibatalkan, NIM harus 5 karakter!")
-        // Program berhenti di sini untuk mahassiwa ini, tidak memuat objek
-    } else {
-        print("Masukkan Jurusan: ")
-        val major = scanner.nextLine()
-
-        // Instansiasi Object karena data sudah aman
-        val s1 = Student(name, nim, major)
-        println("Status: Pendaftaran Selesai.")
+    if (lama < 0) {
+        println("ERROR: Lama pinjam tidak boleh minus! Direset ke 1 hari!")
+        lama = 1
     }
-    // ... (setelah input NIM dan validasi panjang NIM) ...
 
-    print("Pilih Jalur (1. Regular, 2. Umum): ")
-    val type = scanner.nextInt()
-    scanner.nextLine() // Consume newline
+    val p1 = Loan(judul, peminjam, lama)
 
-    if (type == 1) {
-        print("Masukkan Jurusan: ")
-        val major = scanner.nextLine()
-        // Memanggil Primary Constructor
-        val s1 = Student(name, nim, major)
-        println ("Terdaftar di: ${s1.major} dengan GPA awal ${s1.gpa}")
-    } else if (type == 2) {
-        // Memanggil Secondary Constructor, jurusan otomatis "Non-Matriculated"
-        val s2 = Student(name, nim)
-        println("Terdaftar di ${s2.major} dengan GPA awal ${s2.gpa}")
-    } else {
-        println("Pilihan ngawur, pendaftaran batal!")
-    }
+    println("Buku dengan judul ${p1.bookTitle} dipinjam oleh ${p1.borrower} dengan lama pinjam ${p1.loanDuration} hari dan denda ${p1.calculateFine()}")
 }
