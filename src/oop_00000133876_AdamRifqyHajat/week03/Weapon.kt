@@ -1,7 +1,7 @@
 package oop_00000133876_AdamRifqyHajat.week03
 
 class Weapon(val name: String) {
-    var damage: Int = 0
+    var damage: Int = 6750
         set(value){
             if (value < 0){
                 println("ERROR: Damage tidak boleh negatif! Di-set ke 0.")
