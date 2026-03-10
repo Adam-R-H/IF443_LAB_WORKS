@@ -1,12 +1,29 @@
-package oop_00000133876_AdamRifqyHajat.week04
+package oop_00000133876_AdamRifqyHajat.week05
 
 fun main() {
-   val Manajer = Manager("Budi", 5000000)
-    val Pengembang = Developer("Bob", baseSalary = 2000000, "Kotlin")
+   val dosen1 = Dosen("Pak Alex", "0123456")
+    val admin1 = Admin("Bu Siti")
 
-    Manajer.work()
-    println("Bonus ${Manajer.name} = ${Manajer.calculateBonus()}")
+    // Polymorphic Collection: List yang berisi tipe Parent, tapi isinya Objek Anak
+    val daftarPegawai: List<Pegawai> = listOf(dosen1, admin1)
 
-    Pengembang.work()
-    println("Bonus ${Pengembang.name} = ${Pengembang.calculateBonus()}")
+    println("=== AKTIVITAS PEGAWAI ===")
+    for (pegawai in daftarPegawai) {
+        // Pemanggilan Runtime Polymorphism
+        pegawai.bekerja()
+
+        // pegawai.mengajar() // INI AKAN ERROR karena tipe referensinya adalah Pegawai
+        // Smart casting dengan is dan when
+        when (pegawai) {
+            is Dosen -> {
+                println("=> Terdeteksi sebagai Dosen (NIDN: ${pegawai.nidn})")
+                pegawai.mengajar() // Smart cast! Tidak perlu manual casting (as)
+            }
+            is Admin -> {
+                println("=> Terdeteksi sebagai Admin")
+                pegawai.doAdminWork()
+            }
+        }
+        println("-------------------------")
+    }
 }
