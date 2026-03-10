@@ -9,6 +9,14 @@ fun main() {
     val daftar : List<PaymentMethod> = listOf(Dompet, Kartu)
 
     for (payment in daftar){
-        payment.processPayment(75000.0)
+        when (payment){
+            is EWallet -> {
+                payment.topUp(50000.0)
+                payment.processPayment(75000.0)
+            }
+            is CreditCard -> {
+                payment.processPayment(75000.0)
+            }
+        }
     }
 }
