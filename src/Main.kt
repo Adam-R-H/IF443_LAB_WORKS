@@ -7,16 +7,7 @@ fun processCheckout(method: PaymentMethod, amount: Double){
 }
 
 fun main() {
-   val myWatch = Smartwatch()
-    myWatch.showTime()
-
-    val myPhone = Smartphone()
-    myPhone.turnOn()
-
-    val pay1 = Gopay()
-    val pay2 = CreditCard()
-
-    println("\n=== TESTING CHECKOUT ===")
-    processCheckout(pay1, 50000.0)
-    processCheckout(pay2, 150000.0)
+   val lamp1 = SmartLamp("RuangTamu", "1")
+    val speaker1 = SmartSpeaker("Google Nest Dapur", "2")
+    val CCTV1 = SmartCCTV("Ezviz Garasi", "3")
 }
