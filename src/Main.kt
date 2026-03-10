@@ -1,12 +1,14 @@
-package oop_00000133876_AdamRifqyHajat.week03
+package oop_00000133876_AdamRifqyHajat.week04
 
 fun main() {
-   val Senjata = Weapon("Budi")
-    Senjata.damage = -50
-    Senjata.damage = 9999
-    println("Tier: ${Senjata.tier}")
+   println("--- Testing Vehicle ---")
+    val generalVehicle = Vehicle("Sepeda Onthel")
+    generalVehicle.honk()
+    generalVehicle.accelerate()
 
-    val Pemain = Player(username = "Pedang")
-    Pemain.addXp(50)
-    Pemain.addXp(60)
+    println("\n--- Testing Car ---")
+    val myCar = Car("Toyota", 4)
+    myCar.openTrunk() // Memanggil method milik sendiri
+    myCar.honk() // Memanggil method yang sudah di-override
+    myCar.accelerate() // Memanggil gabungan method Parent dan Child
 }
