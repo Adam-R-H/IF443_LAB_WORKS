@@ -1,22 +1,22 @@
-package oop_00000133876_AdamRifqyHajat.week05
+package oop_00000133876_AdamRifqyHajat.week06
 
-import kotlin.system.exitProcess
+// Fungsi ini Decoupled! Tidak peduli kelas aslinya apa.
+fun processCheckout(method: PaymentMethod, amount: Double){
+    println("-> Memulai checkout...")
+    method.pay(amount) // Dynamic polymorphism in action
+}
 
 fun main() {
-   val Dompet = EWallet("Budi", 50000.0)
-    val Kartu = CreditCard("Siti", 100000.0)
+   val myWatch = Smartwatch()
+    myWatch.showTime()
 
-    val daftar : List<PaymentMethod> = listOf(Dompet, Kartu)
+    val myPhone = Smartphone()
+    myPhone.turnOn()
 
-    for (payment in daftar){
-        when (payment){
-            is EWallet -> {
-                payment.topUp(50000.0)
-                payment.processPayment(75000.0)
-            }
-            is CreditCard -> {
-                payment.processPayment(75000.0)
-            }
-        }
-    }
+    val pay1 = Gopay()
+    val pay2 = CreditCard()
+
+    println("\n=== TESTING CHECKOUT ===")
+    processCheckout(pay1, 50000.0)
+    processCheckout(pay2, 150000.0)
 }
