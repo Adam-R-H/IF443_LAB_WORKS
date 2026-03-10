@@ -6,7 +6,7 @@ class SmartCCTV(override val name: String, override val id: String) : SmartDevic
     }
 
     override fun turnOn() {
-        println ("Speaker mati")
+        println ("Mulai rekam")
         startRecord()
     }
 
