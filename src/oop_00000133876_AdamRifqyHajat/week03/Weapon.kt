@@ -8,18 +8,14 @@ class Weapon(val name: String) {
                 field = 0
             } else if ( value > 1000){
                 field = 1000
+            } else {
+                field = value
             }
         }
-    var tier: String = ""
-    set(value){
-        if (damage > 800){
-            field = "Legendary"
+    val tier: String
+        get() = when {
+            damage > 800 -> "Legendary"
+            damage > 500 -> "Epic"
+            else -> "Common"
         }
-        else if (damage > 500){
-            field = "Epic"
-        }
-        else{
-            field = "Common"
-        }
-    }
 }

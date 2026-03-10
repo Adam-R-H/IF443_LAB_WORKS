@@ -1,15 +1,8 @@
 package oop_00000133876_AdamRifqyHajat.week03
 
 fun main() {
-   val e = Employee("Budi")
-
-    // 1. Test Validasi Salary
-    e.salary = 5000000
-    println("Gaji: ${e.salary}")
-
-    // 2. Test Encapsulation
-    e.increasePerformance()
-
-    // 3. Test Computed Property
-    println("Pajak yang harus dibayar: ${e.tax}")
+   val Senjata = Weapon("Budi")
+    Senjata.damage = -50
+    Senjata.damage = 9999
+    println("Tier: ${Senjata.tier}")
 }
