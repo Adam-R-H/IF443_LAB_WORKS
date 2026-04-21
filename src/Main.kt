@@ -1,22 +1,11 @@
-package oop_00000133876_AdamRifqyHajat.week06
-
-// Fungsi ini Decoupled! Tidak peduli kelas aslinya apa.
-fun processCheckout(method: PaymentMethod, amount: Double){
-    println("-> Memulai checkout...")
-    method.pay(amount) // Dynamic polymorphism in action
-}
+package oop_00000133876_AdamRifqyHajat.week07
 
 fun main() {
-   val lamp1 = SmartLamp("RuangTamu", "1")
-    val speaker1 = SmartSpeaker("Google Nest Dapur", "2")
-    val CCTV1 = SmartCCTV("Ezviz Garasi", "3")
+    println("=== TEST SINGLETON ===")
+    println("Status: ${DatabaseManager.connectionStatus}")
+    DatabaseManager.connect()
 
-    val hub = SmartHomeHub()
-
-    hub.addDevice(lamp1)
-    hub.addDevice(speaker1)
-    hub.addDevice(CCTV1)
-
-    hub.activateSecurityMode()
-    hub.turnOffAllSwitches()
+    println("\n=== TEST COMPANION OBJECT ===")
+    val client = NetworkClient.createClient() // Instansiasi lewat Factory
+    client.connect()
 }
