@@ -3,3 +3,5 @@ package oop_00000133876_AdamRifqyHajat.week07.oop_00000133876_AdamRifqyHajat.wee
 class RegularUser(val name: String, val age: Int) {
 
 }
+
+data class DataUser(val name: String, val age: Int)
