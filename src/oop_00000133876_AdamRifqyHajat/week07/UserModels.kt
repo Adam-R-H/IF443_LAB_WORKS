@@ -1,0 +1,5 @@
+package oop_00000133876_AdamRifqyHajat.week07.oop_00000133876_AdamRifqyHajat.week07
+
+class RegularUser(val name: String, val age: Int) {
+
+}
