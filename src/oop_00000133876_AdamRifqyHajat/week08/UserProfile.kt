@@ -1,7 +1,7 @@
 package oop_00000133876_AdamRifqyHajat.week08
 
 // name adalah Non-Null (wajib), email dan phone adalah Nullable (opsional)
-class UserProfule(
+class UserProfile(
     val name: String,
     val email: String?,
     val phone: String? = null // Default argument null
